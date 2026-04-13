@@ -215,23 +215,7 @@ class TikuYanxi(Tiku):
     def __init__(self) -> None:
         super().__init__()
         self.name = '言溪题库'
-        self.api = '[
-    {
-        "contentType": "json",
-        "data": {
-            "options": "${options}",
-            "title": "${title}",
-            "token": "836d1ab2e3d54337a5dd76c3fc4b3bb6",
-            "type": "${type}"
-        },
-        "handler": "return (res)=>res.code === 0 ? [res.data.answer, undefined] : [res.data.question,res.data.answer,{ai: res.data.ai}]",
-        "homepage": "https://tk.enncy.cn/",
-        "method": "get",
-        "name": "言溪题库",
-        "type": "GM_xmlhttpRequest",
-        "url": "https://tk.enncy.cn/query"
-    }
-]'
+        self.api = 'https://tk.enncy.cn/query'
         self._token = None
         self._token_index = 0   # token队列计数器
         self._times = 100   # 查询次数剩余, 初始化为100, 查询后校对修正
